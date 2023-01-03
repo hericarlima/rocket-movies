@@ -30,8 +30,12 @@ export const Container = styled.button`
         margin-bottom: 1.5rem;
 
         svg {
-            border: none;
+            color: ${({ theme }) => theme.COLORS.PINK};
             fill: ${({ theme }) => theme.COLORS.PINK};
+        }
+
+        svg:last-child {
+            fill: none;
         }
     }
 
