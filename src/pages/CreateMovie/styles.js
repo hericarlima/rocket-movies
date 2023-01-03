@@ -26,4 +26,35 @@ export const Content = styled.div`
 
         margin: 4rem auto;
     }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: normal;
+
+        margin-top: 4rem;
+        color: ${({ theme }) => theme.COLORS.GRAY_300};
+    }
+    
+    .tags {
+        width: 100%;
+        padding: 1.6rem;
+        border-radius: .8rem;
+
+        display: flex;
+        gap: 2.4rem;
+
+        margin-top: 2.4rem;
+        background-color: ${({ theme }) => theme.COLORS.DARK};
+    }
+
+    .buttons {
+        display: flex;
+        gap: 4rem;
+        margin-top: 4rem;
+
+        button:first-child {
+            background-color: ${({ theme }) => theme.COLORS.DARK};
+            color: ${({ theme }) => theme.COLORS.PINK};
+        }
+    }
 `;
