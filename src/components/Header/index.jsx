@@ -11,7 +11,7 @@ export function Header() {
 
             <Profile>
                 <div>
-                    <span>Hérica Lima</span>
+                    <span>Hérica Ribes Lima</span>
                     <a href="#">
                         sair
                     </a>

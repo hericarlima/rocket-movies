@@ -13,7 +13,7 @@ export const Container = styled.header`
 
     display: flex;
     align-items: center;
-    gap: 4.0rem;
+    gap: 6.4rem;
 
     padding: 0 12.3rem;
 
@@ -26,7 +26,7 @@ export const Container = styled.header`
 export const Profile = styled.div`
     display: flex;
     align-items: center;
-    
+   
     > img {
         width: 5.6rem;
         height: 5.6rem;
@@ -38,10 +38,10 @@ export const Profile = styled.div`
         flex-direction: column;
         align-items: flex-end;
         margin-right: 1.6rem;
-        line-height: 2.4rem;
         width: 12.5rem;
 
         span {
+            display: inline;
             font-size: 1.4rem;
             font-weight: bold;
         }

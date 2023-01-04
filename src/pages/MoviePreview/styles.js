@@ -18,13 +18,13 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-    max-width: 120.0rem;
+    max-width: 120rem;
     margin: 0 auto;
 
     display: flex;
     flex-direction: column;
 
-    > div {
+    > .stars {
         display: flex;
         align-items: center;
         gap: 1.9rem;
@@ -39,7 +39,48 @@ export const Content = styled.div`
         svg:last-child {
             fill: none;
         }
-
-
     }
+
+    > .tags {
+        display: flex;
+        text-align: center;
+
+        margin-top: 4rem;
+    }
+
+    > p {
+        text-align: justify;
+        margin-top: 4rem;
+    }
+`;
+
+export const Profile = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2.4rem;
+
+    > .user {
+        display: flex;
+        align-items: center;
+        gap: .8rem;
+
+        img {
+            height: 1.6rem;
+            width: 1.6rem;
+            border-radius: 50%;
+        }
+    }
+
+    > .update {
+        display: flex;
+        align-items: center;
+        gap: .8rem;
+
+        svg {
+            color: ${({ theme }) => theme.COLORS.PINK};
+            fill: transparent;
+        }
+    }
+   
 `;
