@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -30,9 +31,9 @@ export const Content = styled.div`
         align-items: center;
 
         margin-bottom:4.0rem;
-
-        button {
-            max-width: 20rem;
-        }
     }
+`;
+
+export const NewMovie = styled(Link)`
+    max-width: 22rem;    
 `;

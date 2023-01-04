@@ -20,7 +20,7 @@ export const Content = styled.div`
         margin-top: 2.4rem;
     }
 
-    > .col-3 {
+    > .col-2 {
         display: flex;
         gap: 4rem;
 

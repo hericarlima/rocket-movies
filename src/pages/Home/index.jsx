@@ -1,4 +1,4 @@
-import { Container, Content } from './styles';
+import { Container, Content, NewMovie } from './styles';
 
 import { Header } from '../../components/Header';
 import { Button } from '../../components/Button';
@@ -13,7 +13,10 @@ export function Home() {
                 <Content>
                     <div>
                         <h1>Meus filmes</h1>
-                        <Button title="+ Adicionar filme" />
+
+                        <NewMovie to="/create">
+                            <Button title="+ Adicionar filme" />
+                        </NewMovie>
                     </div>
 
                     <Movie data={{
