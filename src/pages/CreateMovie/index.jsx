@@ -9,13 +9,15 @@ import { Input } from '../../components/Input';
 import { TextArea } from '../../components/TextArea';
 import { TagItem } from '../../components/TagItem';
 import { Button } from '../../components/Button';
+import { Scroll } from '../../components/Scroll';
 
 export function CreateMovie() {
     return (
         <Container>
             <Header />
 
-            <Content>
+            <Scroll>
+                <Content>
                     <Link to="/">
                         <ButtonText icon={FiArrowLeft} title="Voltar" />
                     </Link>
@@ -39,7 +41,8 @@ export function CreateMovie() {
                         <Button title="Excluir filme" />
                         <Button title="Salvar alterações" />
                     </div>                    
-            </Content>
+                </Content>
+            </Scroll>
         </Container>
     );
 }

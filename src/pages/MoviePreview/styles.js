@@ -9,17 +9,12 @@ export const Container = styled.div`
     grid-template-areas:
     "header"
     "content";
-
-    > main {
-        grid-area: content; 
-        overflow-y: scroll;
-        padding: 6.4rem 12.3rem;
-    }
 `;
 
 export const Content = styled.div`
-    max-width: 120rem;
-    margin: 0 auto;
+    grid-area: content; 
+    overflow-y: auto;
+    padding: 6.4rem 12.3rem;
 
     display: flex;
     flex-direction: column;
