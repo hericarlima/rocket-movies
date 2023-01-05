@@ -1,5 +1,7 @@
 import { FiArrowLeft, FiStar, FiClock } from 'react-icons/fi';
 
+import { Link } from 'react-router-dom';
+
 import { Container, Content, Profile } from './styles';
 
 import { Header } from '../../components/Header';
@@ -13,7 +15,10 @@ export function MoviePreview() {
 
             <main>
                 <Content>
+                    <Link to="/">
                         <ButtonText icon={FiArrowLeft} title="Voltar" />
+                    </Link>
+                    
                     <div className="stars">
                         <h1>Interestellar</h1>
                         <FiStar /><FiStar /><FiStar /><FiStar /><FiStar />

@@ -5,21 +5,28 @@ export const Container = styled.div`
     height: 100vh;
 
     > header {
-        height: 14.4rem;
+        height: 11.6rem;
+        width: 100%;
+
+        display: flex;
+        align-items: center;
         background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
-        padding: 6.2rem;
+        padding: 0 12.3rem;
         
         svg { 
             color: ${({ theme }) => theme.COLORS.PINK};
         }
     }
-
 `;
 
 export const Form = styled.form`
     max-width: 34rem;
     margin: 3rem auto 0; 
+
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
 
     > div:nth-child(4) {
         margin-top: 2.4rem;

@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -13,7 +12,7 @@ export const Container = styled.div`
 
     > main {
         grid-area: content; 
-        overflow-y: scroll;
+        overflow-y: auto;
         padding: 6.4rem 12.3rem;
     }
 `;
@@ -31,9 +30,13 @@ export const Content = styled.div`
         align-items: center;
 
         margin-bottom:4.0rem;
+
+        button {
+            display: flex;
+            align-items: center;
+            gap: .8rem;
+            padding: 1rem 3.2rem;
+        }
     }
 `;
 
-export const NewMovie = styled(Link)`
-    max-width: 22rem;    
-`;

@@ -1,4 +1,5 @@
 import { FiArrowLeft } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 import { Container, Content } from './styles';
 
@@ -15,8 +16,9 @@ export function CreateMovie() {
             <Header />
 
             <Content>
-                
-                    <ButtonText icon={FiArrowLeft} title="Voltar" />
+                    <Link to="/">
+                        <ButtonText icon={FiArrowLeft} title="Voltar" />
+                    </Link>
 
                     <h1>Novo filme</h1>
 
