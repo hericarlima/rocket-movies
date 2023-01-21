@@ -1,8 +1,12 @@
+import { useAuth } from '../../hooks/auth'
+
 import { Container, Profile } from './styles';
 
 import { Input } from '../Input';
 
 export function Header() {
+    const { signOut } = useAuth();
+
     return (
         <Container>
             <h1>RocketMovies</h1>
@@ -12,7 +16,7 @@ export function Header() {
             <Profile>
                 <div>
                     <span>Hérica Ribes Lima</span>
-                    <a href="#">
+                    <a href="#" onClick={signOut}>
                         sair
                     </a>
                 </div>
