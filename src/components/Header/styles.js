@@ -44,6 +44,7 @@ export const Profile = styled.div`
             display: inline;
             font-size: 1.4rem;
             font-weight: bold;
+            color: ${ ({ theme }) => theme.COLORS.GRAY_100 };
         }
 
         a {
