@@ -1,21 +1,46 @@
-import { Container, Content } from './styles';
-
+import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { api } from '../../services/api';
 import { Link } from 'react-router-dom';
 
+import { Container, Content } from './styles';
 import { FiPlus } from 'react-icons/fi';
 
 import { Header } from '../../components/Header';
 import { Button } from '../../components/Button';
 import { Movie } from '../../components/Movie';
 import { Scroll } from '../../components/Scroll';
+import { Input } from '../../components/Input';
 
 export function Home() {
+    const [search, setSearch] = useState("");
+    const [notes, setNotes] = useState([]);
+
+    const navigate = useNavigate();
+
+    function handleMoviePreview(id) {
+        navigate(`/preview/${id}`);
+    }
+
+    useEffect(() => {
+        async function fetchNotes() {
+            const response = await api.get(`/notes?title=${search}`);
+            setNotes(response.data);
+        }
+
+        fetchNotes();
+    }, [search]);
+    
     return (
         <Container>
             <Header />
-
+            
             <Scroll>
                 <Content>
+                    <Input
+                        placeholder="Pesquisar pelo título"
+                        onChange={e => setSearch(e.target.value)}
+                    />
                     <div>
                         <h1>Meus filmes</h1>
 
@@ -23,27 +48,15 @@ export function Home() {
                             <Button icon={FiPlus} title="Adicionar filme" />
                         </Link>
                     </div>
-
-
-                    <Link to="/preview">
-                        <Movie data={{
-                        title: 'Interestellar',
-                        tags: [{id: '1', name: 'Ficção Científica'}, {id: '2', name: 'Drama'}, {id: '3', name: 'Família'}],
-                        description: 'Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se...'
-                        }} />
-
-                        <Movie data={{
-                        title: 'Interestellar',
-                        tags: [{id: '1', name: 'Ficção Científica'}, {id: '2', name: 'Drama'}, {id: '3', name: 'Família'}],
-                        description: 'Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se...'
-                        }} />
-
-                        <Movie data={{
-                            title: 'Interestellar',
-                            tags: [{id: '1', name: 'Ficção Científica'}, {id: '2', name: 'Drama'}, {id: '3', name: 'Família'}],
-                            description: 'Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se...'
-                        }} /> 
-                    </Link>
+                    {
+                        notes.map(note => (
+                            <Movie 
+                                key={String(note.id)}
+                                data={note}
+                                onClick={() => handleMoviePreview(note.id)}
+                            />
+                        ))
+                    }
                 </Content>
             </Scroll>
         </Container>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { api } from '../../services/api';
 
 import { useAuth } from '../../hooks/auth';
@@ -15,6 +15,8 @@ import { Button } from '../../components/Button';
 export function Profile() {
     const { user, updateProfile } = useAuth();
 
+    const navigate = useNavigate();
+
     const [name, setName] = useState(user.name);
     const [email, setEmail] = useState(user.email);
     const [password, setPassword] = useState();
@@ -25,15 +27,21 @@ export function Profile() {
     const [avatar, setAvatar] = useState(avatarUrl);
     const [avatarFile, setAvatarFile] = useState(null); //novo arquivo
 
+    function handleBack() {
+        navigate(-1);
+    }
+    
     async function handleUpdate() {
-        const user = {
+        const updated = {
             name,
             email,
             password,
             new_password: passwordNew
         }
 
-        await updateProfile({ user, avatarFile });
+        const userUpdated = Object.assign(user, updated); //sobrescreve o novo sobre antigo
+
+        await updateProfile({ user: userUpdated, avatarFile });
     }
 
     function handleChangeAvatar(event) {
@@ -47,9 +55,11 @@ export function Profile() {
     return (
         <Container>
             <header>
-                <Link to="/">
-                    <ButtonText icon={FiArrowLeft} title={'Voltar'} />
-                </Link>
+                <ButtonText 
+                    icon={FiArrowLeft} 
+                    title={'Voltar'} 
+                    onClick={handleBack}    
+                />
             </header>
 
             <Form>

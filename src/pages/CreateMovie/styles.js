@@ -27,7 +27,7 @@ export const Content = styled.div`
         margin: 4rem auto;
     }
 
-    h2 {
+    > h2 {
         font-size: 2rem;
         font-weight: normal;
 
@@ -41,20 +41,10 @@ export const Content = styled.div`
         border-radius: .8rem;
 
         display: flex;
+        flex-wrap: wrap; 
         gap: 2.4rem;
 
         margin-top: 2.4rem;
         background-color: ${({ theme }) => theme.COLORS.DARK};
-    }
-
-    .buttons {
-        display: flex;
-        gap: 4rem;
-        margin-top: 4rem;
-
-        button:first-child {
-            background-color: ${({ theme }) => theme.COLORS.DARK};
-            color: ${({ theme }) => theme.COLORS.PINK};
-        }
     }
 `;

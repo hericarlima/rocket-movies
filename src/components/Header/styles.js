@@ -13,7 +13,7 @@ export const Container = styled.header`
 
     display: flex;
     align-items: center;
-    gap: 6.4rem;
+    justify-content: space-between;
 
     padding: 0 12.3rem;
 

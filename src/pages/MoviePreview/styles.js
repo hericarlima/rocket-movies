@@ -47,6 +47,10 @@ export const Content = styled.div`
         text-align: justify;
         margin-top: 4rem;
     }
+
+    > button {
+        margin-top: 4rem;
+    }
 `;
 
 export const Profile = styled.div`

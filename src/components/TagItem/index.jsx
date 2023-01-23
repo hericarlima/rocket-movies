@@ -9,6 +9,7 @@ export function TagItem({ isNew, value, onClick, ...rest }) {
               type="text"
               value={value}
               readOnly={!isNew}
+              {...rest}
             /> 
 
             <button
