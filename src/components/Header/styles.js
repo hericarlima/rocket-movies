@@ -38,7 +38,6 @@ export const Profile = styled.div`
         flex-direction: column;
         align-items: flex-end;
         margin-right: 1.6rem;
-        width: 12.5rem;
 
         span {
             display: inline;
@@ -47,7 +46,7 @@ export const Profile = styled.div`
             color: ${ ({ theme }) => theme.COLORS.GRAY_100 };
         }
 
-        a {
+        button {
             font-size: 1.4rem;
             text-decoration: none;
             color: ${ ({ theme }) => theme.COLORS.GRAY_300 };

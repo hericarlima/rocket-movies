@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { api } from '../../services/api';
 import { useAuth } from '../../hooks/auth'
+
 import avatarPlaceholder from '../../assets/avatar_placeholder.svg';
 
 import { FiArrowLeft, FiStar, FiClock } from 'react-icons/fi';

@@ -3,8 +3,6 @@ import { FiStar } from 'react-icons/fi';
 import { Container } from './styles';
 import { Tag } from '../Tag';
 
-
-
 export function Movie({ data, ...rest }){
     return (
         <Container {...rest}>

@@ -1,9 +1,9 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { api } from '../../services/api';
 
 import { FiArrowLeft } from 'react-icons/fi';
-import { useNavigate } from 'react-router-dom';
 
 import { Container, Content } from './styles';
 
@@ -74,7 +74,6 @@ export function CreateMovie() {
                         title="Voltar" 
                         onClick={handleBack}    
                     />
-                    
 
                     <h1>Novo filme</h1>
 
@@ -83,7 +82,6 @@ export function CreateMovie() {
                             placeholder="Título"
                             onChange={e => setTitle(e.target.value)}    
                         />
-
                         <Input 
                             placeholder="Sua nota (de 0 a 5)"
                             onChange={e => setRating(e.target.value)}    
@@ -117,7 +115,6 @@ export function CreateMovie() {
                         />
                     </div>
 
-                    
                     <Button title="Salvar alterações" onClick={handleNewMovie} />
                                
                 </Content>

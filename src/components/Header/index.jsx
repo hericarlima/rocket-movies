@@ -4,6 +4,7 @@ import { api } from '../../services/api';
 import avatarPlaceholder from '../../assets/avatar_placeholder.svg';
 
 import { Container, Profile } from './styles';
+import { ButtonText } from '../ButtonText';
 
 
 export function Header({ ...rest }) {
@@ -24,9 +25,7 @@ export function Header({ ...rest }) {
             <Profile>
                 <div>
                     <Link to="/profile"><span>{user.name}</span></Link>
-                    <a href="#" onClick={handleSignOut}> 
-                        sair
-                    </a>
+                    <ButtonText title="sair" onClick={handleSignOut} /> 
                 </div>
                 <img src={avatarUrl} alt={user.name}/>
             </Profile>
