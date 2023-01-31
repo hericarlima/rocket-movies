@@ -1,11 +1,12 @@
 import { useAuth } from '../../hooks/auth'
 import { Link, useNavigate } from 'react-router-dom';
+
 import { api } from '../../services/api';
+
 import avatarPlaceholder from '../../assets/avatar_placeholder.svg';
 
-import { Container, Profile } from './styles';
+import { Container, Brand, Search, Profile } from './styles';
 import { ButtonText } from '../ButtonText';
-
 
 export function Header({ ...rest }) {
     const { signOut, user } = useAuth();
@@ -19,8 +20,14 @@ export function Header({ ...rest }) {
     const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
 
     return (
-        <Container {...rest}>
-            <h1>RocketMovies</h1>
+        <Container>
+            <Brand>
+                <h1>RocketMovies</h1>
+            </Brand>
+
+            <Search>
+                {children}
+            </Search>
 
             <Profile>
                 <div>

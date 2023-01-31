@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const Container = styled.header`
     grid-area: header; //fixo no scroll página
 
@@ -12,15 +11,28 @@ export const Container = styled.header`
     border-bottom-color: ${ ({ theme }) => theme.COLORS.BACKGROUND_700 };
 
     display: flex;
-    align-items: center;
     justify-content: space-between;
 
     padding: 0 12.3rem;
+`;
 
+export const Brand = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
     > h1 {
         font-size: 2.4rem;
         color: ${({theme}) => theme.COLORS.PINK};
     }
+`;
+
+export const Search = styled.div`
+    display: flex;
+    align-items: center;
+    padding: 0 6.4rem;
+    flex-grow: 1;
+
 `;
 
 export const Profile = styled.div`
@@ -28,8 +40,8 @@ export const Profile = styled.div`
     align-items: center;
    
     > img {
-        width: 5.6rem;
-        height: 5.6rem;
+        width: 6.4rem;
+        height: 6.4rem;
         border-radius: 50%;
     }
 
@@ -41,7 +53,7 @@ export const Profile = styled.div`
 
         span {
             display: inline;
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             font-weight: bold;
             color: ${ ({ theme }) => theme.COLORS.GRAY_100 };
         }

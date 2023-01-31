@@ -33,14 +33,15 @@ export function Home() {
     
     return (
         <Container>
-            <Header />
+            <Header>
+                <Input
+                    placeholder="Pesquisar pelo título"
+                    onChange={e => setSearch(e.target.value)}
+                />
+            </Header>
             
             <Scroll>
                 <Content>
-                    <Input
-                        placeholder="Pesquisar pelo título"
-                        onChange={e => setSearch(e.target.value)}
-                    />
                     <div>
                         <h1>Meus filmes</h1>
 
