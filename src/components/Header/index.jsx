@@ -8,7 +8,7 @@ import avatarPlaceholder from '../../assets/avatar_placeholder.svg';
 import { Container, Brand, Search, Profile } from './styles';
 import { ButtonText } from '../ButtonText';
 
-export function Header({ ...rest }) {
+export function Header({children}) {
     const { signOut, user } = useAuth();
     const navigate = useNavigate();
 
